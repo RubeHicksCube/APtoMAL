@@ -7,7 +7,7 @@ import time
 # === CONFIG ===
 INPUT_JSON = "export.json"
 OUTPUT_XML = "convert.xml"
-USERNAME = "Hackopus"  # Replace with your MAL username
+USERNAME = "your_username"  # Replace with your MAL username
 SKIPPED_LOG = "skipped_titles.txt"
 
 # === CLEANING FUNCTION ===
@@ -76,12 +76,14 @@ ET.SubElement(user, "user_export_type").text = "1"
 
 converted = 0
 skipped_titles = []
+total = len(entries)
 
-for entry in entries:
+for index, entry in enumerate(entries, start=1):
     title = entry.get("name")
     if not title:
         continue
 
+    print(f"\n🔄 [{index}/{total}] Processing: {title}")
     mal_id, matched_title, episode_count = auto_match_first_result(title)
     if not mal_id:
         skipped_titles.append(title)
@@ -116,3 +118,6 @@ if skipped_titles:
         for title in skipped_titles:
             f.write(title + "\n")
     print(f"⚠️ Logged {len(skipped_titles)} skipped titles to {SKIPPED_LOG}")
+
+# === FINAL SUMMARY ===
+print(f"\n✅ Finished: {converted} converted, {len(skipped_titles)} skipped, {total} total.")
