@@ -11,5 +11,4 @@ The script will output a convert.xml file that you can import into MAL.
 
 The script my take a while, as to not time out Jikan API.
 
-use your MAL username in the script where it says USERNAME.
-
+Use your MAL username in the script where it says USERNAME.
