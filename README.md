@@ -6,3 +6,10 @@ This will match titles from Anime-Planet to titles using Jikan API to what MAL u
 Keep the exported JSON in the same directory as the script.
 
 The script will output a convert.xml file that you can import into MAL.
+
+---
+
+The script my take a while, as to not time out Jikan API.
+
+use your MAL username in the script where it says USERNAME.
+
