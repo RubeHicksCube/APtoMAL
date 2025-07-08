@@ -101,7 +101,7 @@ for index, entry in enumerate(entries, start=1):
     ET.SubElement(anime, "my_finish_date").text = "0000-00-00"
     ET.SubElement(anime, "my_score").text = str(mal_score)
     ET.SubElement(anime, "my_status").text = status
-    ET.SubElement(anime, "my_times_watched").text = "1"
+    ET.SubElement(anime, "my_times_watched").text = "0"
     ET.SubElement(anime, "my_rewatch_value").text = "0"
     ET.SubElement(anime, "update_on_import").text = "1"
 
